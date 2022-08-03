@@ -1,0 +1,10 @@
+
+ 
+DevDen Arch Viz Vol 1 HDRP is a Scottish themed modern architecture built using 50+ low poly assets and high resolution HDRP  textures. All the 3D models in the scene are well customized, to be used in your game environment 
+
+Drag the prefab from the prefabs folder to use it in the scene 
+
+
+Enjoy and please rate the asset! 
+Contact us on for AR/VR related queries and development support 
+Gmail - admin@devdensolutions.com 

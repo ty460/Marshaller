@@ -1,0 +1,238 @@
+fileFormatVersion: 2
+guid: 69de13019204ce644876c61b1c576d30
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: inner_wallinner1_window
+  - first:
+      1: 100004
+    second: innet_wall:inner_wallinner1_ceiling
+  - first:
+      1: 100006
+    second: innet_wall:inner_wallinner1_floor
+  - first:
+      1: 100008
+    second: innet_wall:inner_wallinner1_wall1
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: inner_wallinner1_window
+  - first:
+      4: 400004
+    second: innet_wall:inner_wallinner1_ceiling
+  - first:
+      4: 400006
+    second: innet_wall:inner_wallinner1_floor
+  - first:
+      4: 400008
+    second: innet_wall:inner_wallinner1_wall1
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: inner_wallinner1_window
+  - first:
+      23: 2300004
+    second: innet_wall:inner_wallinner1_ceiling
+  - first:
+      23: 2300006
+    second: innet_wall:inner_wallinner1_floor
+  - first:
+      23: 2300008
+    second: innet_wall:inner_wallinner1_wall1
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: inner_wallinner1_window
+  - first:
+      33: 3300004
+    second: innet_wall:inner_wallinner1_ceiling
+  - first:
+      33: 3300006
+    second: innet_wall:inner_wallinner1_floor
+  - first:
+      33: 3300008
+    second: innet_wall:inner_wallinner1_wall1
+  - first:
+      43: 4300000
+    second: innet_wall:inner_wallinner1
+  - first:
+      43: 4300002
+    second: innet_wall:inner_wallinner1_ceiling
+  - first:
+      43: 4300004
+    second: innet_wall:inner_wallinner1_floor
+  - first:
+      43: 4300006
+    second: innet_wall:inner_wallinner1_wall1
+  - first:
+      43: 4300008
+    second: inner_wallinner1_window
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bathroom_floor3
+    second: {fileID: 2100000, guid: f8c17ff9f8feeb741aaeddeed04b5fe6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bathroom_wall3
+    second: {fileID: 2100000, guid: 13e6dea8ba650134da22910b8a9db217, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bedroom_floor3
+    second: {fileID: 2100000, guid: 3ba88002234dbb74996ea5fbf5aecea1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bedroom_wall4
+    second: {fileID: 2100000, guid: 311aafff32c751c45a0c7fea27421fde, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass_wall_glass4
+    second: {fileID: 2100000, guid: 008b48c168d07c8449b55d0ad65c3824, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hall_way
+    second: {fileID: 2100000, guid: b45b9aa98f2c8ef48843a55de7594b58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inner_roof3
+    second: {fileID: 2100000, guid: 300297cd0a6e80848b476f5154c73793, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: livingroom_floor4
+    second: {fileID: 2100000, guid: 6dfd78c1d93ad604f9d0f62ddd69d3c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: livingroom_wall3
+    second: {fileID: 2100000, guid: e1bfd52f4c5d1954ab5735a56127c8a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pattern_wall
+    second: {fileID: 2100000, guid: aa836f3edcc065f499123139a8482262, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: studyroom_floor3
+    second: {fileID: 2100000, guid: fa30d7ee76a1bf6449d1aca6e346d9f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: studyroom_wall3
+    second: {fileID: 2100000, guid: ac9f5a87bc6039548839b055b01457b6, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties:
+    - '#BAKERY{"meshName":["innet_wall:inner_wallinner1"],"padding":[1],"unwrapper":[0]}'
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 0
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
