@@ -20,14 +20,14 @@ public class GizmosTest2
         float starZ = GameObject.FindWithTag("Star").GetComponent<Renderer>().bounds.size.z;
         var color = Gizmos.color;
         
-        Vector3 vector2 = new Vector3(starX*0.65f, 0, starZ * 1.67f);
-        Vector3 vector3 = new Vector3(starX * 0.65f, 0, -starZ * 1.67f);
-        Vector3 vector4 = new Vector3(-starX * 0.65f, 0, starZ * 1.67f);
-        Vector3 vector5 = new Vector3(-starX * 0.65f, 0, -starZ * 1.67f);
-        Vector3 vector1 = new Vector3(0.26f * starX, 0, starZ * 1.67f);
-        Vector3 vector6 = new Vector3(0.26f * starX, 0, -starZ * 1.67f);
-        Vector3 vector7 = new Vector3(-0.26f * starX, 0, -starZ * 1.67f);
-        Vector3 vector8 = new Vector3(-0.26f * starX, 0, starZ * 1.67f);
+        Vector3 vector2 = new Vector3(starX*0.65f, 0, starZ * 1.53f);
+        Vector3 vector3 = new Vector3(starX * 0.65f, 0, -starZ * 1.53f);
+        Vector3 vector4 = new Vector3(-starX * 0.65f, 0, starZ * 1.53f);
+        Vector3 vector5 = new Vector3(-starX * 0.65f, 0, -starZ * 1.53f);
+        Vector3 vector1 = new Vector3(0.2f * starX, 0, starZ * 1.53f);
+        Vector3 vector6 = new Vector3(0.2f * starX, 0, -starZ * 1.53f);
+        Vector3 vector7 = new Vector3(-0.2f * starX, 0, -starZ * 1.53f);
+        Vector3 vector8 = new Vector3(-0.2f * starX, 0, starZ * 1.53f);
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(target.transform.position + vector2, target.transform.position + vector3);
