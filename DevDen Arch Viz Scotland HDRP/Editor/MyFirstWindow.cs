@@ -8,10 +8,10 @@ public class MyFirstWindow : EditorWindow
 
     MyFirstWindow()
     {
-        this.titleContent = new GUIContent("Modle Marshaller");
+        this.titleContent = new GUIContent("Marshaller - Y plane");
 
     }
-    [MenuItem("MyTool/Modle Marshaller")]
+    [MenuItem("MyTool/Symmetrical Layout/Marshaller - Y plane")]
     static void ShowWindows()
     {
         EditorWindow.GetWindow(typeof(MyFirstWindow));
@@ -28,7 +28,7 @@ public class MyFirstWindow : EditorWindow
         GUILayout.Space(10);
         GUI.skin.label.fontSize = 24;
         GUI.skin.label.alignment = TextAnchor.MiddleCenter;
-        GUILayout.Label("Modle Marshaller");
+        GUILayout.Label("Marshaller");
         GUILayout.Space(10);
         GUILayout.Space(10);
         GUI.skin.label.fontSize = 12;
@@ -38,14 +38,16 @@ public class MyFirstWindow : EditorWindow
         GUILayout.Space(10);
         GUILayout.Label("Time:                                        " + System.DateTime.Now);
         GUILayout.Space(10);
-        starObject = (GameObject)EditorGUILayout.ObjectField("选择恒星模型:", starObject, typeof(GameObject), true);
+        starObject = (GameObject)EditorGUILayout.ObjectField("Select a Star Model: ", starObject, typeof(GameObject), true);
         starObject.tag = "Star";
         GUILayout.Space(10);
-        planetObject = (GameObject)EditorGUILayout.ObjectField("选择行星模型:", planetObject, typeof(GameObject), true);
+        planetObject = (GameObject)EditorGUILayout.ObjectField("Select a Planet Model: ", planetObject, typeof(GameObject), true);
         planetObject.tag = "Planet1";
+
+
         GUILayout.Space(10);
         GUILayout.BeginHorizontal();
-        if (GUILayout.Button("打开显示范围"))
+        if (GUILayout.Button("Turn On Range Display"))
         {
             GameObject.FindWithTag("Star").AddComponent(typeof(StarRange));
             GameObject.FindWithTag("Planet2").AddComponent(typeof(TargetExample));
@@ -53,7 +55,7 @@ public class MyFirstWindow : EditorWindow
             GameObject.FindWithTag("Planet4").AddComponent(typeof(TargetExample));
         }
         GUILayout.Space(10);
-        if (GUILayout.Button("关闭范围显示"))
+        if (GUILayout.Button("Turn Off Range Display"))
         {
             DestroyImmediate(GameObject.FindWithTag("Star").GetComponent<StarRange>());
             DestroyImmediate(GameObject.FindWithTag("Planet2").GetComponent<TargetExample>());
@@ -84,14 +86,14 @@ public class MyFirstWindow : EditorWindow
         GUILayout.Space(20);
 
         GUILayout.BeginHorizontal();
-       
-        if (GUILayout.Button("镜面对称"))
+
+        if (GUILayout.Button("Mirror Symmetry"))
         {
             MirrorSymmetry();
             Debug.Log(GameObject.FindWithTag("Gemini2").transform.position);
             Debug.Log(GameObject.FindWithTag("Planet1").transform.position);
         }
-        if (GUILayout.Button("中心对称"))
+        if (GUILayout.Button("Central Symmetry"))
         {
             CentroSymmetry();
         }
@@ -102,10 +104,13 @@ public class MyFirstWindow : EditorWindow
         {
             DestroyImmediate(GameObject.FindWithTag("Star").GetComponent<StarRange>());
             ReleaseTag();
-            
+            StarRange.aaa = true;
         }
         GUILayout.Space(10);
-        if (GUILayout.Button("初始化"))
+        GUILayout.Space(10);
+        GUILayout.Space(10);
+        GUILayout.Space(10);
+        if (GUILayout.Button("Clear Cache"))
         {
             StarRange.aaa = true;
         }
@@ -114,21 +119,21 @@ public class MyFirstWindow : EditorWindow
         GUILayout.Space(10);
         float starX = starObject.GetComponent<Renderer>().bounds.size.x;
         Vector3 starWorVec = starObject.transform.TransformPoint(planetObject.transform.localPosition);
-       // Debug.Log(starX);
+        // Debug.Log(starX);
         float starZ = starObject.GetComponent<Renderer>().bounds.size.z;
-       // Debug.Log(starZ);
+        // Debug.Log(starZ);
         Vector3 planetWorVec = planetObject.transform.TransformPoint(planetObject.transform.localPosition);
-       // Debug.Log("x-: " + (planetWorVec.x - starWorVec.x));
-       // Debug.Log("z-: " + (planetWorVec.z - starWorVec.z));
-        if (Math.Abs(planetWorVec.x- starWorVec.x) < starX * 0.586f && Math.Abs(planetWorVec.z - starWorVec.z) < starZ * 1.51f && Math.Abs(planetWorVec.x - starWorVec.x) > starX * 0.1f &&  StarRange.aaa == true)
+        // Debug.Log("x-: " + (planetWorVec.x - starWorVec.x));
+        // Debug.Log("z-: " + (planetWorVec.z - starWorVec.z));
+        if (Math.Abs(planetWorVec.x - starWorVec.x) < starX * 0.586f && Math.Abs(planetWorVec.z - starWorVec.z) < starZ * 1.51f && Math.Abs(planetWorVec.x - starWorVec.x) > starX * 0.1f && StarRange.aaa == true)
         {
             QuadMarshal();
             StarRange.aaa = false;
-  
+
         }
         if (Math.Abs(planetWorVec.x - starWorVec.x) < starX * 0.2f && Math.Abs(planetWorVec.z - starWorVec.z) < starZ * 1.51f && StarRange.aaa == true)
         {
-            
+
             BiMarshal();
             StarRange.aaa = false;
 
@@ -136,20 +141,19 @@ public class MyFirstWindow : EditorWindow
 
     }
 
-
     private void BiMarshal()
     {
         starObject.tag = "Star";
         planetObject.tag = "Planet1";
         Vector3 starVec = starObject.transform.position;
         Quaternion angles = Quaternion.identity;
-        Vector3 rotation = new Vector3(0 ,180, 0);
+        Vector3 rotation = new Vector3(0, 180, 0);
         angles.eulerAngles += rotation;
         Vector3 planet2Vec = new Vector3(2 * starVec.x - planetObject.transform.position.x, planetObject.transform.position.y, 2 * starVec.z - planetObject.transform.position.z);
-        GameObject planet2 = Instantiate(planetObject, planet2Vec, angles, planetObject.transform);
+        GameObject planet2 = Instantiate(planetObject, planet2Vec, angles, starObject.transform);
         planet2.tag = "Planet2";
         GameObject.FindWithTag("Planet2").AddComponent(typeof(TargetExample));
-        Debug.Log("已完成二分编组");
+        Debug.Log("BiMarshal Completed");
     }
     private void QuadMarshal()
     {
@@ -163,17 +167,17 @@ public class MyFirstWindow : EditorWindow
         GameObject planet2 = Instantiate(planetObject, planetVec2, angles, starObject.transform);
         planet2.tag = "Planet2";
         Vector3 planetVec3 = new Vector3(planetObject.transform.position.x, planetObject.transform.position.y, planet2.transform.position.z);
-        GameObject planet3 = Instantiate(planet2, planetVec3, angles , planet2.transform);
+        GameObject planet3 = Instantiate(planet2, planetVec3, angles, planet2.transform);
         planet3.tag = "Planet3";
-        Vector3 planetVec4 = new Vector3(2 * starVec.x - planet3.transform.position.x , planet3.transform.position.y, 2 * starVec.z - planet3.transform.position.z);
-       GameObject planet4 = Instantiate(planet3, planetVec4, Quaternion.identity, planet3.transform);
+        Vector3 planetVec4 = new Vector3(2 * starVec.x - planet3.transform.position.x, planet3.transform.position.y, 2 * starVec.z - planet3.transform.position.z);
+        GameObject planet4 = Instantiate(planet3, planetVec4, Quaternion.identity, planet3.transform);
         planet4.tag = "Planet4";
         GameObject.FindWithTag("Planet2").AddComponent(typeof(TargetExample));
         GameObject.FindWithTag("Planet3").AddComponent(typeof(TargetExample));
         GameObject.FindWithTag("Planet4").AddComponent(typeof(TargetExample));
-        Debug.Log("已完成四分编组");
+        Debug.Log("QuadMarshal Completed");
     }
-  
+
     private void MirrorSymmetry()
     {
         Vector3 starVec = GameObject.FindWithTag("Star").transform.position;
@@ -183,7 +187,8 @@ public class MyFirstWindow : EditorWindow
         gemini2Vec.z = 2 * starVec.z - GameObject.FindWithTag("Planet1").transform.position.z;
         GameObject.FindWithTag("Planet2").transform.position = gemini2Vec;
     }
-    private void CentroSymmetry() {
+    private void CentroSymmetry()
+    {
 
         Vector3 starVec = GameObject.FindWithTag("Star").transform.position;
         Vector3 planet2Vec = new Vector3();
@@ -192,7 +197,7 @@ public class MyFirstWindow : EditorWindow
         planet2Vec.z = 2 * starVec.z - GameObject.FindWithTag("Planet1").transform.position.z;
         GameObject.FindWithTag("Planet2").transform.position = planet2Vec;
 
-        Vector3 planet3Vec = new Vector3 ();
+        Vector3 planet3Vec = new Vector3();
         planet3Vec.x = GameObject.FindWithTag("Planet1").transform.position.x;
         planet3Vec.y = GameObject.FindWithTag("Planet1").transform.position.y;
         planet3Vec.z = GameObject.FindWithTag("Planet2").transform.position.z;
@@ -226,7 +231,7 @@ public class MyFirstWindow : EditorWindow
         {
             GameObject.FindWithTag("Planet2").tag = "Planet";
         }
-       
+
         if (GameObject.FindWithTag("Planet3").tag != null)
         {
             GameObject.FindWithTag("Planet3").tag = "Planet";
@@ -237,7 +242,7 @@ public class MyFirstWindow : EditorWindow
         }
 
     }
-    
+
 
 
 
