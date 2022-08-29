@@ -11,7 +11,7 @@ public class MyFirstWindow : EditorWindow
         this.titleContent = new GUIContent("Marshaller - Y plane");
 
     }
-    [MenuItem("MyTool/Symmetrical Layout/Marshaller - Y plane")]
+    [MenuItem("MyTool/Symmetrical Layout/Marshaller - Y plane &y")]
     static void ShowWindows()
     {
         EditorWindow.GetWindow(typeof(MyFirstWindow));
@@ -90,8 +90,8 @@ public class MyFirstWindow : EditorWindow
         if (GUILayout.Button("Mirror Symmetry"))
         {
             MirrorSymmetry();
-            Debug.Log(GameObject.FindWithTag("Gemini2").transform.position);
-            Debug.Log(GameObject.FindWithTag("Planet1").transform.position);
+            //Debug.Log(GameObject.FindWithTag("Gemini2").transform.position);
+            //Debug.Log(GameObject.FindWithTag("Planet1").transform.position);
         }
         if (GUILayout.Button("Central Symmetry"))
         {
@@ -153,7 +153,7 @@ public class MyFirstWindow : EditorWindow
         GameObject planet2 = Instantiate(planetObject, planet2Vec, angles, starObject.transform);
         planet2.tag = "Planet2";
         GameObject.FindWithTag("Planet2").AddComponent(typeof(TargetExample));
-        Debug.Log("BiMarshal Completed");
+        //Debug.Log("BiMarshal Completed");
     }
     private void QuadMarshal()
     {
@@ -175,7 +175,7 @@ public class MyFirstWindow : EditorWindow
         GameObject.FindWithTag("Planet2").AddComponent(typeof(TargetExample));
         GameObject.FindWithTag("Planet3").AddComponent(typeof(TargetExample));
         GameObject.FindWithTag("Planet4").AddComponent(typeof(TargetExample));
-        Debug.Log("QuadMarshal Completed");
+        //Debug.Log("QuadMarshal Completed");
     }
 
     private void MirrorSymmetry()
